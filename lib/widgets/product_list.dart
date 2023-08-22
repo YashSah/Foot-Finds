@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/product_card.dart';
-import 'package:shop_app/product_details_page.dart';
+import 'package:shop_app/widgets/product_card.dart';
+import 'package:shop_app/pages/product_details_page.dart';
 
-import 'global_variables.dart';
+import '../global_variables.dart';
 
 class ProductList extends StatefulWidget {
   const ProductList({super.key});
@@ -29,6 +29,7 @@ class _ProductListState extends State<ProductList> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     const border = OutlineInputBorder(
       borderSide: BorderSide(
         color: Color.fromRGBO(225, 225, 225, 1),
@@ -97,6 +98,7 @@ class _ProductListState extends State<ProductList> {
               },
             ),
           ),
+
           Expanded(
             child: ListView.builder(
               itemCount: products.length,
